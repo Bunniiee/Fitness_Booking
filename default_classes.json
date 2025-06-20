@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Morning Yoga",
+    "datetime": "2026-06-11T07:00:00",
+    "instructor": "Ronaldo",
+    "available_slots": 10
+  },
+  {
+    "name": "HIIT Blast",
+    "datetime": "2026-06-11T09:00:00",
+    "instructor": "Ramos",
+    "available_slots": 15
+  },
+  {
+    "name": "Pilates",
+    "datetime": "2026-06-12T08:00:00",
+    "instructor": "Kroos",
+    "available_slots": 12
+  },
+  {
+    "name": "Zumba",
+    "datetime": "2026-06-12T18:00:00",
+    "instructor": "Marcel",
+    "available_slots": 20
+  },
+  {
+    "name": "Evening Stretch",
+    "datetime": "2026-06-13T19:00:00",
+    "instructor": "Bale",
+    "available_slots": 0
+  }
+] 

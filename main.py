@@ -8,13 +8,22 @@ from datetime import datetime
 from schemas import ClassOut, BookingCreate, BookingOut, ClassCreate
 from utils import convert_ist_to_user_tz, IST
 from sqlalchemy.exc import SQLAlchemyError
+from models import seed_default_classes_from_json
+from contextlib import asynccontextmanager
 
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Fitness Studio Booking API")
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    db = SessionLocal()
+    seed_default_classes_from_json(db)
+    db.close()
+    yield
+
+app = FastAPI(title="Fitness Studio Booking API", lifespan=lifespan)
 
 def get_db():
     db = SessionLocal()
